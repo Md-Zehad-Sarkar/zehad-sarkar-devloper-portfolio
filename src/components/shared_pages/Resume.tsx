@@ -1,3 +1,4 @@
+'use client'
 const Resume = () => {
   //resume download
   const resumeLink = `https://drive.google.com/file/d/1c-B8cVtNF9Mrud8xiGaWfJez5wODfXVj/view?usp=sharing`;

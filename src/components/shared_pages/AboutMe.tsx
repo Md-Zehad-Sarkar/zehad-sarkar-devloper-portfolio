@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutMe = () => {
   return (
     <div className="max-w-[800px]  text-justify mt-24">

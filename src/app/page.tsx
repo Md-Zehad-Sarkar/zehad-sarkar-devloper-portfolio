@@ -1,4 +1,3 @@
-"use client";
 import AboutMe from "@/components/shared_pages/AboutMe";
 import Contact from "@/components/shared_pages/Contact";
 import Navbar from "@/components/shared_pages/Navbar";
