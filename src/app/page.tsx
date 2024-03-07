@@ -2,6 +2,7 @@
 import AboutMe from "@/components/shared_pages/AboutMe";
 import Contact from "@/components/shared_pages/Contact";
 import Navbar from "@/components/shared_pages/Navbar";
+import Projects from "@/components/shared_pages/Projects";
 import Resume from "@/components/shared_pages/Resume";
 import Skills from "@/components/shared_pages/Skills";
 
@@ -14,8 +15,9 @@ export default function Home() {
       <div>
         <Skills />
         <AboutMe />
-        <Contact />
+        <Projects />
         <Resume />
+        <Contact />
       </div>
     </div>
   );
