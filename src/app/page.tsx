@@ -1,15 +1,22 @@
-import Navbar from "@/shared_pages/Navbar";
-import AboutMe from "./about/page";
+"use client";
+import AboutMe from "@/components/shared_pages/AboutMe";
+import Contact from "@/components/shared_pages/Contact";
+import Navbar from "@/components/shared_pages/Navbar";
+import Resume from "@/components/shared_pages/Resume";
+import Skills from "@/components/shared_pages/Skills";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-4 bg-slate-500 mx-auto max-w-7xl w-full flex gap-4">
-      <div className="bg-purple-500 w-24 h-full ">
+    <div className="min-h-screen p-4  mx-auto max-w-7xl w-full flex gap-4">
+      <div className=" w-24 h-full sticky  top-0 ">
         <Navbar />
       </div>
       <div>
+        <Skills />
         <AboutMe />
+        <Contact />
+        <Resume />
       </div>
-    </main>
+    </div>
   );
 }
