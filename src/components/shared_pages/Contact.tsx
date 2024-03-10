@@ -1,6 +1,6 @@
 "use client";
 
-import { sendEMail } from "@/lib/sendEmail";
+import { sendEmail } from "@/lib/sendEmail";
 
 import { useForm } from "react-hook-form";
 
@@ -20,7 +20,7 @@ const Contact = () => {
   } = useForm<TFormData>();
 
   const onSubmit = async (data: TFormData) => {
-    sendEMail(data);
+    sendEmail(data);
     reset();
   };
 

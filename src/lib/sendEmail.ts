@@ -2,7 +2,7 @@
 import { TFormData } from "@/components/shared_pages/Contact";
 import nodemailer from "nodemailer";
 
-export async function sendEMail(data: TFormData) {
+export async function sendEmail(data: TFormData) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -27,19 +27,19 @@ export async function sendEMail(data: TFormData) {
   });
 }
 
-export async function sendEmail(data: FormData) {
-  const apiEndpoint = "/api/contact";
+// export async function sendEmail(data: FormData) {
+//   const apiEndpoint = "/api/contact";
 
-  fetch(apiEndpoint, {
-    method: "POST",
-    body: JSON.stringify(data),
-    cache: "no-store",
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      alert(response.message);
-    })
-    .catch((err) => {
-      alert(err);
-    });
-}
+//   fetch(apiEndpoint, {
+//     method: "POST",
+//     body: JSON.stringify(data),
+//     cache: "no-store",
+//   })
+//     .then((res) => res.json())
+//     .then((response) => {
+//       alert(response.message);
+//     })
+//     .catch((err) => {
+//       alert(err);
+//     });
+// }
