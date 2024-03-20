@@ -48,7 +48,7 @@ const TopSection = () => {
       <div className="flex items-center justify-center order-1 lg:order-2">
         <Image
           src={profile_picture}
-          // className="rounded-lg"
+          className="rounded-lg max-w-[600px]"
           width={500}
           height={500}
           style={{ borderRadius: "40px 40px 10px 10px" }}
