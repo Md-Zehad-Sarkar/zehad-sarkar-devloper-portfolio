@@ -15,7 +15,7 @@ export const metadata = {
 const Skills = () => {
   return (
     <div className="w-full mt-24">
-      <h2 className="text-5xl mb-12 font-semibold" id="skill">
+      <h2 className="text-5xl mb-12 font-semibold" id="skills">
         What I know ?
       </h2>
 
