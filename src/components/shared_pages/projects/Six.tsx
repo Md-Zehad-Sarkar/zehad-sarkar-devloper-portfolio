@@ -1,6 +1,6 @@
 import Image from "next/image";
-import image_6 from "@/assets/images/project-5.png";
-import image_6_2 from "@/assets/images/project-5.png";
+import image_6 from "@/assets/images/project-6.png";
+import image_6_2 from "@/assets/images/project-6.2.png";
 import Link from "next/link";
 
 const Six = () => {
