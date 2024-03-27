@@ -7,7 +7,9 @@ const TopSection = () => {
   return (
     <div className="grid items-end justify-center gap-3 mt-2 mb-20 select-none lg:grid-cols-2">
       <div className="order-2 px-2 space-y-8 text-justify lg:order-1">
-        <h4 id="about" className="text-3xl font-medium">Hi , I am </h4>
+        <h4 id="about" className="text-3xl font-medium">
+          Hi , I am{" "}
+        </h4>
         <h3 className="pl-12 text-4xl font-bold text-indigo-600">
           Zehad Sarkar
         </h3>
@@ -45,12 +47,12 @@ const TopSection = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center order-1 lg:order-2">
+      <div className="flex items-center justify-center order-1 lg:order-2 w-full max-w-[600px]">
         <Image
           src={profile_picture}
-          className="rounded-lg max-w-[600px]"
-          width={500}
-          height={500}
+          className="rounded-lg w-full max-w-[600px]"
+          // width={500}
+          // height={500}
           style={{ borderRadius: "40px 40px 10px 10px" }}
           alt="profile image"
         />

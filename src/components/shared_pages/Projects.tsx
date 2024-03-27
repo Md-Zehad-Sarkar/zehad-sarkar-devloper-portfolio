@@ -5,6 +5,7 @@ import Two from "./projects/Two";
 import Three from "./projects/Three";
 import Four from "./projects/four";
 import Five from "./projects/Five";
+import Six from "./projects/six";
 
 const Projects = () => {
   return (
@@ -13,6 +14,7 @@ const Projects = () => {
         My Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10">
+        <Six/>
         <One />
         <Five/>
         <Two />
