@@ -12,7 +12,7 @@ const Resume = () => {
 
   return (
     <div className="mt-24">
-      <h2 className="text-5xl mb-12 font-semibold" id="resume">
+      <h2 className="text-5xl mb-8 font-semibold" id="resume">
         My Resume
       </h2>
       <div className="flex justify-start items-center">
