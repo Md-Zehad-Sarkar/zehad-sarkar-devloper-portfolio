@@ -24,7 +24,7 @@ const Three = () => {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-white font-thin">
-          site name: Art Innovators Academy
+          Site Name: Art Innovators Academy
         </h2>
         <p className="text-white">
           Technologies: react, express js, firebase, mongodb, tailwind and daisy

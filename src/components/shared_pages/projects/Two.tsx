@@ -15,7 +15,7 @@ const Two = () => {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-white font-thin">
-          site name: Toy Thriver
+          Site Name: Toy Thriver
         </h2>
         <p className="text-white">
           Technologies: react,, mongodb, express js, firebase, tailwind

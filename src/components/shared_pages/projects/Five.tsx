@@ -24,7 +24,7 @@ const Five = () => {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-white font-thin">
-          site name: Event 360
+          Site Name: Event 360
         </h2>
         <p className="text-white">
           Technologies: React, typescript, tailwind css, shadcn,

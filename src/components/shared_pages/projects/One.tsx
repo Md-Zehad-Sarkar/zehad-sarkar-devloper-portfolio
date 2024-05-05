@@ -10,7 +10,7 @@ const One = () => {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-white font-thin">
-          site name: Empowering Recovery chain
+          Site Name: Empowering Recovery chain
         </h2>
         <p className="text-white">
           Technologies: typescript, react, tailwind, redux
