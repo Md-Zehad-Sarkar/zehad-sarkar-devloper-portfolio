@@ -18,28 +18,12 @@ export async function sendEmail(data: TFormData) {
     text: data.message,
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      throw new Error("error");
-    } else {
-      return true;
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    if (info.response) {
+      return "Email send successful";
     }
-  });
+  } catch (error) {
+    console.error(error);
+  }
 }
-
-// export async function sendEmail(data: FormData) {
-//   const apiEndpoint = "/api/contact";
-
-//   fetch(apiEndpoint, {
-//     method: "POST",
-//     body: JSON.stringify(data),
-//     cache: "no-store",
-//   })
-//     .then((res) => res.json())
-//     .then((response) => {
-//       alert(response.message);
-//     })
-//     .catch((err) => {
-//       alert(err);
-//     });
-// }

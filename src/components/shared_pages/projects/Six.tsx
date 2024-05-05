@@ -32,7 +32,7 @@ const Six = () => {
         <div className="card-actions">
           <div className="badge badge-outline text-white font-medium py-3">
             <Link
-              href="https://sunbeam-kids-garden-client.vercel.app/"
+              href="https://sunbeam-kids-garden-client-final.vercel.app"
               target="_blank"
             >
               UI live link
@@ -40,7 +40,7 @@ const Six = () => {
           </div>
           <div className="badge badge-outline text-white font-medium py-3">
             <Link
-              href="https://github.com/Md-Zehad-Sarkar/sunbeam-kids-garden-server.git"
+              href="https://github.com/Md-Zehad-Sarkar/sunbeam-kids-garden-server-with-authentication.git"
               target="_blank"
             >
               Server git link
@@ -48,7 +48,7 @@ const Six = () => {
           </div>
           <div className="badge badge-outline text-white font-medium py-3">
             <Link
-              href="https://github.com/Md-Zehad-Sarkar/sunbeam-kids-garden-client.git"
+              href="https://github.com/Md-Zehad-Sarkar/sunbeam-kids-garden-client-final.git"
               target="_blank"
             >
               Client git link
