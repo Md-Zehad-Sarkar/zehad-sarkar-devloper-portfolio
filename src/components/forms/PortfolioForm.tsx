@@ -39,13 +39,12 @@ const PortfolioForm = ({
   const { handleSubmit, reset } = methods;
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
     submit(data);
     reset();
   };
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>{children}</form>;
+      <form onSubmit={handleSubmit(onSubmit)}>{children}</form>
     </FormProvider>
   );
 };
