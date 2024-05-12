@@ -13,16 +13,18 @@
     "@react-email/html": "0.0.7",
     "@react-email/section": "0.0.11",
     "@react-email/text": "0.0.7",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
+    "multiselect-react-dropdown": "^2.0.25",
     "next": "14.1.2",
     "nodemailer": "^6.9.11",
     "npm": "^10.5.0",
     "react": "^18",
     "react-dom": "^18",
     "react-email": "2.1.0",
-    "react-hook-form": "^7.51.0",
+    "react-hook-form": "^7.51.4",
     "react-icons": "^5.0.1",
-    "sharp": "^0.33.2"
+    "sharp": "^0.33.2",
+    "sonner": "^1.4.41"
   },
   "devDependencies": {
     "@types/node": "^20",

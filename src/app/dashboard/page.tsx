@@ -6,6 +6,10 @@ const DashboardPage = () => {
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Page content here */}
+        <h1>All Projects</h1>
+        <h1>All Blogs</h1>
+        <h1>All Course</h1>
+        <h1>All Skills</h1>
         <label
           htmlFor="my-drawer-2"
           className="btn btn-primary drawer-button lg:hidden"
