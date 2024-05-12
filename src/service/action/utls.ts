@@ -33,3 +33,15 @@ export const addCourse = async (values: any) => {
 
   return data?.course;
 };
+
+// add courses action
+export const addBlog = async (values: any) => {
+  const res = await fetch("http://localhost:5000/api/v1/add-blogs", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(values),
+  });
+  const data = await res.json();
+
+  return data?.blogs;
+};
