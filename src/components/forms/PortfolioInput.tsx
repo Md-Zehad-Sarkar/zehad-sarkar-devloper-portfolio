@@ -30,7 +30,7 @@ const PortfolioInput = ({
               type={type}
               placeholder={placeholder}
               className={
-                className || "input input-bordered w-full max-w-xs mt-1"
+                className || "input input-bordered w-full max-w-xs mt-1 mb-3"
               }
             />
           </div>
