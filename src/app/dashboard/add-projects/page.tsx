@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 
-// const image_hosting_api = "2223ec610998a850d27bf0a27225a987";
 const image_hosting_api = process.env.NEXT_PUBLIC_IMGBB_API;
 
 const api_url = "https://api.imgbb.com/1/upload";
