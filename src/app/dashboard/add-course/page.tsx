@@ -3,47 +3,29 @@ import PortfolioFileUploader from "@/components/forms/PortfolioFileUploader";
 import PortfolioForm from "@/components/forms/PortfolioForm";
 import PortfolioInput from "@/components/forms/PortfolioInput";
 import { addSkills } from "@/service/action/utls";
-import axios from "axios";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 
-const image_hosting_api = process.env.NEXT_PUBLIC_IMGBB_API;
-
-const api_url = "https://api.imgbb.com/1/upload";
-
-const AddSkillsPage = () => {
+const AddCoursesPage = () => {
   const router = useRouter();
   const onSubmit = async (data: FieldValues) => {
     try {
-      const obj = { ...data };
-      const file = obj["image"];
-      delete obj["image"];
-
-      const formData = new FormData();
-      formData.append("image", file);
-      const response = await axios.post(api_url, formData, {
-        params: { key: image_hosting_api },
-      });
-
-      const imageUrl = response?.data?.data?.display_url;
-      data.image = imageUrl;
-
       const res = await addSkills(data);
       console.log(res);
 
       if (res?.insertedId) {
-        toast.success("Skills Has Been Added Successful");
+        toast.success("Course Has Been Added Successful");
         router.push("/dashboard");
       }
     } catch (error) {
-      toast.error("Failed To Add Skills. Please Try Again");
+      toast.error("Failed To Add Course. Please Try Again");
     }
   };
   return (
     <div className="mt-12 max-w-7xl mx-auto w-full">
-      <h3 className="text-center text-2xl font-semibold">Add Your Skills</h3>
+      <h3 className="text-center text-2xl font-semibold">Add Your Course</h3>
       <PortfolioForm
         onSubmit={onSubmit}
         className="mt-4 max-w-[800px] w-full mx-auto"
@@ -51,25 +33,38 @@ const AddSkillsPage = () => {
         <PortfolioInput
           name="name"
           type="text"
-          label="Skills Name"
-          placeholder="Type Your Skill Here"
+          label="Course Name"
+          placeholder="Type Your Course Name"
         />
-        <PortfolioFileUploader name="image" type="file" />
+
         <PortfolioInput
-          name="skillPath"
+          name="institute"
           type="text"
-          label="Skills Path"
-          placeholder="Type Your Skill Path. Frontend/Backend/Fullstack"
+          label="Institute Name"
+          placeholder="Type Your Institute Name"
+        />
+
+        <PortfolioInput
+          name="startDate"
+          type="text"
+          label="Start Date"
+          placeholder="Type Start Date"
+        />
+        <PortfolioInput
+          name="endDate"
+          type="text"
+          label="End Date"
+          placeholder="Type End Date"
         />
         <button
           type="submit"
           className="btn btn-primary mt-4 md:mt-4 w-full max-w-xs"
         >
-          Submit
+          Add Course
         </button>
       </PortfolioForm>
     </div>
   );
 };
 
-export default AddSkillsPage;
+export default AddCoursesPage;
