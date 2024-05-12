@@ -16,6 +16,7 @@ type TFormConfig = {
 type TForm = {
   children: ReactNode;
   onSubmit: SubmitHandler<FieldValues>;
+  className?: string;
 } & TFormConfig;
 
 const PortfolioForm = ({
@@ -23,6 +24,7 @@ const PortfolioForm = ({
   onSubmit: submit,
   resolver,
   defaultValues,
+  className,
 }: TForm) => {
   const formConfig: TFormConfig = {};
 
@@ -44,7 +46,12 @@ const PortfolioForm = ({
   };
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>{children}</form>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={className || "md:max-w-[800px] w-full mx-auto"}
+      >
+        {children}
+      </form>
     </FormProvider>
   );
 };

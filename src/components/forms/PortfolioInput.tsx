@@ -5,8 +5,9 @@ import { Controller } from "react-hook-form";
 type TInputProps = {
   name: string;
   type: string;
-  label: string;
+  label?: string;
   placeholder?: string;
+  className?: string;
 };
 
 const PortfolioInput = ({
@@ -14,6 +15,7 @@ const PortfolioInput = ({
   type = "text",
   label,
   placeholder = "type here",
+  className,
 }: TInputProps) => {
   return (
     <Controller
@@ -21,12 +23,15 @@ const PortfolioInput = ({
       render={({ field }) => {
         return (
           <div className="">
-            <span className="font-medium px-1 text-xl"> {label}</span> <br />
+            <span className="font-medium px-1 text-xl mb-2"> {label}</span>{" "}
+            <br />
             <input
               {...field}
               type={type}
               placeholder={placeholder}
-              className="input input-bordered w-full max-w-xs mt-1"
+              className={
+                className || "input input-bordered w-full max-w-xs mt-1"
+              }
             />
           </div>
         );

@@ -21,9 +21,9 @@ export default function PortfolioFileUploader({
         return (
           <div className="mt-3 mb-3">
             {/* <button> */}
-            <span className="mt-1 mb-1 mx-1">
+            <span className="mt-1 mb-1 mx-1 text-xl">
               {label || "Upload file"}
-            </span>{" "}
+            </span>
             <br />
             <input
               type={type}
@@ -33,9 +33,7 @@ export default function PortfolioFileUploader({
                 onChange((e.target as HTMLInputElement)?.files?.[0])
               }
               value={value?.fileName}
-              // style={{ display: "none" }}
             />
-            {/* </button> */}
           </div>
         );
       }}
