@@ -1,8 +1,8 @@
 "use client";
-import PortfolioFileUploader from "@/components/forms/PortfolioFileUploader";
+
 import PortfolioForm from "@/components/forms/PortfolioForm";
 import PortfolioInput from "@/components/forms/PortfolioInput";
-import { addSkills } from "@/service/action/utls";
+import { addCourse } from "@/service/action/utls";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { FieldValues } from "react-hook-form";
@@ -12,8 +12,7 @@ const AddCoursesPage = () => {
   const router = useRouter();
   const onSubmit = async (data: FieldValues) => {
     try {
-      const res = await addSkills(data);
-      console.log(res);
+      const res = await addCourse(data);
 
       if (res?.insertedId) {
         toast.success("Course Has Been Added Successful");

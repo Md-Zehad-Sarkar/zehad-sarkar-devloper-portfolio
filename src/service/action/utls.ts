@@ -21,3 +21,15 @@ export const addSkills = async (values: any) => {
 
   return data?.skills;
 };
+
+// add courses action
+export const addCourse = async (values: any) => {
+  const res = await fetch("http://localhost:5000/api/v1/add-course", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(values),
+  });
+  const data = await res.json();
+
+  return data?.course;
+};
