@@ -37,6 +37,9 @@ const DashboardPage = () => {
           <li>
             <Link href={"/dashboard/add-course"}>Add Courses</Link>
           </li>
+          <li>
+            <Link href={"/"}>Home</Link>
+          </li>
         </ul>
       </div>
     </div>

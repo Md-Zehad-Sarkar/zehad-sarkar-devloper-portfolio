@@ -31,7 +31,6 @@ const AddSkillsPage = () => {
       data.image = imageUrl;
 
       const res = await addSkills(data);
-      console.log(res);
 
       if (res?.insertedId) {
         toast.success("Skills Has Been Added Successful");
