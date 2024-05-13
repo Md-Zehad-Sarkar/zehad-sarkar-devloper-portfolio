@@ -16,7 +16,9 @@ const AdminLoginPage = () => {
     if (res?.accessToken) {
       setUserLocalStorage(res.accessToken);
       toast.success("Admin Login Successful");
-      router.push("/dashboard");
+      router.push("/");
+    } else {
+      router.push("/");
     }
   };
   return (

@@ -1,7 +1,6 @@
 import Contact from "@/components/shared_pages/Contact";
 import Education from "@/components/shared_pages/Education";
 import Navbar from "@/components/shared_pages/Navbar";
-// import Projects from "@/components/shared_pages/Projects";
 import Resume from "@/components/shared_pages/Resume";
 import Skills from "@/components/shared_pages/Skills";
 import TopSection from "@/components/shared_pages/TopSection";

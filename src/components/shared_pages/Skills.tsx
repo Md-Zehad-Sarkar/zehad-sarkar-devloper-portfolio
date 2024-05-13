@@ -15,7 +15,9 @@ export const metadata = {
   title: "Skills",
 };
 const Skills = async () => {
-  const res = await axios.get("http://localhost:5000/api/v1/skills");
+  const res = await axios.get(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/skills"
+  );
 
   const skills = res?.data?.data;
 

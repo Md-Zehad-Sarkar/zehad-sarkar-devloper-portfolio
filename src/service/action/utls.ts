@@ -1,12 +1,13 @@
-import axios from "axios";
-
-// "use server";
+"use server";
 export const addProjects = async (values: any) => {
-  const res = await fetch("http://localhost:5000/api/v1/add-projects", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(values),
-  });
+  const res = await fetch(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-projects",
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(values),
+    }
+  );
   const data = await res.json();
 
   return data?.projects;
@@ -14,11 +15,14 @@ export const addProjects = async (values: any) => {
 
 // add skills action
 export const addSkills = async (values: any) => {
-  const res = await fetch("http://localhost:5000/api/v1/add-skills", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(values),
-  });
+  const res = await fetch(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-skills",
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(values),
+    }
+  );
   const data = await res.json();
 
   return data?.skills;
@@ -26,11 +30,14 @@ export const addSkills = async (values: any) => {
 
 // add courses action
 export const addCourse = async (values: any) => {
-  const res = await fetch("http://localhost:5000/api/v1/add-course", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(values),
-  });
+  const res = await fetch(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-course",
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(values),
+    }
+  );
   const data = await res.json();
 
   return data?.course;
@@ -38,11 +45,14 @@ export const addCourse = async (values: any) => {
 
 // add courses action
 export const addBlog = async (values: any) => {
-  const res = await fetch("http://localhost:5000/api/v1/add-blogs", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(values),
-  });
+  const res = await fetch(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-blogs",
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(values),
+    }
+  );
   const data = await res.json();
 
   return data?.blogs;
@@ -50,13 +60,17 @@ export const addBlog = async (values: any) => {
 
 // Login api
 export const adminLogin = async (value: any) => {
-  const res = await fetch("http://localhost:5000/api/v1/login-users", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(value),
-  });
+  const res = await fetch(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/login-users",
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(value),
+      credentials: "include",
+    }
+  );
 
   const userInfo = await res.json();
   return userInfo;

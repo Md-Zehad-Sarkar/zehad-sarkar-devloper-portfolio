@@ -9,7 +9,7 @@ const Navbar = () => {
   const user = getAdmin();
 
   const handleLogout = () => {
-    removeUserLocalStorage("accessToken");
+    removeUserLocalStorage();
     toast.success("Admin Logout Success");
     router.push("/");
     window.location.reload();
