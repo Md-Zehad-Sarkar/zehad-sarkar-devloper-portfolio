@@ -1,6 +1,4 @@
-// import Blog from "@/components/shared_pages/blog/Blog";
 import axios from "axios";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 type TBlog = {
   _id: string;
@@ -8,10 +6,6 @@ type TBlog = {
   blogs: string;
   author: string;
 };
-
-// const Blog = dynamic(() => import("@/components/shared_pages/blog/Blog"), {
-//   ssr: false,
-// });
 
 const MyBlogPage = async () => {
   const res = await axios.get("http://localhost:5000/api/v1/blogs");
@@ -36,7 +30,6 @@ const MyBlogPage = async () => {
         </div>
 
         <div className="mt-16">
-          {/* <Blog blogs={blogs} /> */}
           <>
             {blogs.map((blog: TBlog) => (
               <div key={blog?._id}>
@@ -45,9 +38,7 @@ const MyBlogPage = async () => {
                 <div
                   className="mt-3"
                   dangerouslySetInnerHTML={{ __html: blog?.blogs }}
-                >
-                  {/* {blog?.blogs} */}
-                </div>
+                />
               </div>
             ))}
           </>
