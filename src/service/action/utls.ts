@@ -1,3 +1,5 @@
+import axios from "axios";
+
 // "use server";
 export const addProjects = async (values: any) => {
   const res = await fetch("http://localhost:5000/api/v1/add-projects", {
@@ -44,4 +46,18 @@ export const addBlog = async (values: any) => {
   const data = await res.json();
 
   return data?.blogs;
+};
+
+// Login api
+export const adminLogin = async (value: any) => {
+  const res = await fetch("http://localhost:5000/api/v1/login-users", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(value),
+  });
+
+  const userInfo = await res.json();
+  return userInfo;
 };

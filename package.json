@@ -15,6 +15,7 @@
     "@react-email/text": "0.0.7",
     "axios": "^1.6.8",
     "jodit-react": "^4.1.2",
+    "jwt-decode": "^4.0.0",
     "multiselect-react-dropdown": "^2.0.25",
     "next": "^14.1.2",
     "nodemailer": "^6.9.11",
