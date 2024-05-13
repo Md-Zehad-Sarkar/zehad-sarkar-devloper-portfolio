@@ -10,7 +10,7 @@ type TBlog = {
 const MyBlogPage = async () => {
   const res = await axios.get("http://localhost:5000/api/v1/blogs");
 
-  const blogs = await res?.data?.data;
+  const blogs = res?.data?.data;
 
   return (
     <div className="m-4">
