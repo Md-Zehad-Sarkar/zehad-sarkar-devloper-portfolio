@@ -4,7 +4,9 @@ import Link from "next/link";
 import axios from "axios";
 
 const Projects = async () => {
-  const res = await axios.get("http://localhost:5000/api/v1/projects");
+  const res = await axios.get(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/projects"
+  );
 
   const allProjects = await res?.data?.data;
 

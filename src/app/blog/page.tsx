@@ -8,7 +8,9 @@ type TBlog = {
 };
 
 const MyBlogPage = async () => {
-  const res = await axios.get("http://localhost:5000/api/v1/blogs");
+  const res = await axios.get(
+    "https://portfolio-server-sigma-eight.vercel.app/api/v1/blogs"
+  );
 
   const blogs = res?.data?.data;
   return (
