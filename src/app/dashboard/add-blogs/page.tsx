@@ -1,12 +1,14 @@
 "use client";
-import React, { useState, useRef, useMemo } from "react";
-import JoditEditor from "jodit-react";
 import PortfolioForm from "@/components/forms/PortfolioForm";
-import { FieldValues } from "react-hook-form";
 import PortfolioInput from "@/components/forms/PortfolioInput";
 import { addBlog } from "@/service/action/utls";
-import { toast } from "sonner";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+import { useMemo, useRef, useState } from "react";
+import { FieldValues } from "react-hook-form";
+import { toast } from "sonner";
+
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 const AddBlogsPage = () => {
   const editor = useRef(null);
