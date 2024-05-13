@@ -8,7 +8,7 @@ import axios from "axios";
 import Multiselect from "multiselect-react-dropdown";
 import { useRouter } from "next/navigation";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -64,6 +64,7 @@ const AddProjectsPage = () => {
       }
     } catch (error) {
       toast.error("Failed To Add Project. Please Try Again");
+      router.refresh();
     }
   };
   return (

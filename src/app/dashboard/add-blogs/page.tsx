@@ -8,7 +8,7 @@ import { addBlog } from "@/service/action/utls";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
-const AddBlogsPage = ({ placeholder }) => {
+const AddBlogsPage = ({ placeholder }:{placeholder:string}) => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const router = useRouter();
@@ -55,7 +55,7 @@ const AddBlogsPage = ({ placeholder }) => {
         ref={editor}
         value={content}
         config={config}
-        onBlur={(newContent) => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
+        onBlur={(newContent) => setContent(newContent)}
         onChange={(newContent) => {}}
       />
 
