@@ -8,7 +8,7 @@ import { addBlog } from "@/service/action/utls";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
-const AddBlogsPage = ({ placeholder }:{placeholder:string}) => {
+const AddBlogsPage = () => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
   const router = useRouter();
@@ -16,9 +16,9 @@ const AddBlogsPage = ({ placeholder }:{placeholder:string}) => {
   const config = useMemo(
     () => ({
       readonly: false,
-      placeholder: placeholder || "Start typings...",
+      placeholder: "Start typings...",
     }),
-    [placeholder]
+    []
   );
 
   const onSubmit = async (data: FieldValues) => {

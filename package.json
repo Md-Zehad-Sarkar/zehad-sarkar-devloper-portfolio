@@ -16,7 +16,7 @@
     "axios": "^1.6.8",
     "jodit-react": "^4.1.2",
     "multiselect-react-dropdown": "^2.0.25",
-    "next": "14.1.2",
+    "next": "^14.1.2",
     "nodemailer": "^6.9.11",
     "npm": "^10.5.0",
     "react": "^18",
