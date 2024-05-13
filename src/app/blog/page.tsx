@@ -1,4 +1,6 @@
+// import Blog from "@/components/shared_pages/blog/Blog";
 import axios from "axios";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 type TBlog = {
   _id: string;
@@ -7,11 +9,14 @@ type TBlog = {
   author: string;
 };
 
+// const Blog = dynamic(() => import("@/components/shared_pages/blog/Blog"), {
+//   ssr: false,
+// });
+
 const MyBlogPage = async () => {
   const res = await axios.get("http://localhost:5000/api/v1/blogs");
 
   const blogs = res?.data?.data;
-
   return (
     <div className="m-4">
       <div className="max-w-[1200px] w-full mx-auto">
@@ -31,23 +36,21 @@ const MyBlogPage = async () => {
         </div>
 
         <div className="mt-16">
-          {blogs && blogs?.length ? (
-            <>
-              {blogs.map((blog: TBlog) => (
-                <div key={blog?._id}>
-                  <h2 className="mb-1 font-bold text-2xl"> {blog?.name}</h2>
-                  <h2 className="font-medium">Author: {blog?.author}</h2>
-                  <p className="mt-3">
-                    {blog?.blogs?.replace(/<p>/g, "").replace(/<\/p>/g, "")}
-                  </p>
+          {/* <Blog blogs={blogs} /> */}
+          <>
+            {blogs.map((blog: TBlog) => (
+              <div key={blog?._id}>
+                <h2 className="mb-1 font-bold text-2xl"> {blog?.name}</h2>
+                <h2 className="font-medium">Author: {blog?.author}</h2>
+                <div
+                  className="mt-3"
+                  dangerouslySetInnerHTML={{ __html: blog?.blogs }}
+                >
+                  {/* {blog?.blogs} */}
                 </div>
-              ))}
-            </>
-          ) : (
-            <h2 className="text-center font-medium text-xl">
-              No blog published yet
-            </h2>
-          )}
+              </div>
+            ))}
+          </>
         </div>
       </div>
     </div>
