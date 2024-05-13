@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <div className="mt-24">
       <h2 className="text-5xl mb-12">Contact</h2>
-      <form onClick={handleSubmit(onSubmit)} className="max-w-[600px]">
+      <form onClick={handleSubmit(onSubmit)} className="max-w-[600px] my-2">
         <legend id="contact">Contact with me</legend>
         <div className="flex flex-col mt-6 gap-2">
           <label htmlFor="Name" className="text-lg">
