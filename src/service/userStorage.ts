@@ -8,16 +8,12 @@ export const setUserLocalStorage = (token: string) => {
   return localStorage.setItem("accessToken", token);
 };
 
-
-
 export const getUserLocalStorage = () => {
   if (!"accessToken" || typeof window === "undefined") {
     return "";
   }
   return localStorage.getItem("accessToken");
 };
-
-
 
 export const removeUserLocalStorage = () => {
   if (!"accessToken" || typeof window === "undefined") {

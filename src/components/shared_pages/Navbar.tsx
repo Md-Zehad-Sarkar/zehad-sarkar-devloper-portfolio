@@ -1,4 +1,5 @@
 "use client";
+import { deleteCookies } from "@/service/action/setCookies";
 import { getAdmin, removeUserLocalStorage } from "@/service/userStorage";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -10,6 +11,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     removeUserLocalStorage();
+    deleteCookies();
     toast.success("Admin Logout Success");
     router.push("/");
     window.location.reload();
