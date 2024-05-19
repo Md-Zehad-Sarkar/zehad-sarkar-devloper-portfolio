@@ -71,6 +71,7 @@ export const adminLogin = async (value: any) => {
       headers: {
         "content-type": "application/json",
       },
+
       body: JSON.stringify(value),
       credentials: "include",
     }

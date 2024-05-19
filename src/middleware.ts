@@ -1,16 +1,13 @@
-"use client";
 import { NextResponse, NextRequest } from "next/server";
-import { getUserLocalStorage } from "./service/userStorage";
 import { jwtDecode } from "jwt-decode";
 import { cookies } from "next/headers";
-interface IDecodedToken {
-  email: string;
-  role: string;
-}
+// interface IDecodedToken {
+//   email: string;
+//   role: string;
+// }
 
-export function middleware(request: NextRequest) {
-  const token = cookies().get("accessToken");
-  console.log(token);
+export async function middleware(request: NextRequest) {
+  const token = await cookies().get("accessToken")?.value;
 
   if (!token) {
     return NextResponse.redirect(new URL("/admin-login", request.url));
@@ -18,10 +15,11 @@ export function middleware(request: NextRequest) {
 
   let decoded = null;
   if (token) {
-    decoded = jwtDecode(token) as IDecodedToken;
+    decoded = (await jwtDecode(token as string)) as any;
   }
 
   const userRole = decoded?.role;
+
   if (userRole === "admin") {
     return NextResponse.next();
   }
