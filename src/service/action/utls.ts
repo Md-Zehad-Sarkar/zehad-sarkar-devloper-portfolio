@@ -1,4 +1,8 @@
 "use server";
+
+import { redirect } from "next/navigation";
+import { setAccessTokenCookies } from "./setCookies";
+
 export const addProjects = async (values: any) => {
   const res = await fetch(
     "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-projects",
@@ -67,11 +71,17 @@ export const adminLogin = async (value: any) => {
       headers: {
         "content-type": "application/json",
       },
+
       body: JSON.stringify(value),
       credentials: "include",
     }
   );
 
   const userInfo = await res.json();
+  if (userInfo?.accessToken) {
+    setAccessTokenCookies(userInfo.accessToken, {
+      redirect: "/dashboard",
+    });
+  }
   return userInfo;
 };

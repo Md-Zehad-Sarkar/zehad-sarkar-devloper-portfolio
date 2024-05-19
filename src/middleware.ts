@@ -1,31 +1,31 @@
-"use client";
 import { NextResponse, NextRequest } from "next/server";
-import { getUserLocalStorage } from "./service/userStorage";
 import { jwtDecode } from "jwt-decode";
-interface IDecodedToken {
-  email: string;
-  role: string;
-}
+import { cookies } from "next/headers";
+// interface IDecodedToken {
+//   email: string;
+//   role: string;
+// }
 
-export function middleware(request: NextRequest) {
-  // const token = getUserLocalStorage();
-  
-  // if (!token) {
-  //   return NextResponse.redirect(new URL("/admin-login", request.url));
-  // }
+export async function middleware(request: NextRequest) {
+  const token = await cookies().get("accessToken")?.value;
 
-  // let decoded = null;
-  // if (token) {
-  //   decoded = jwtDecode(token as string) as IDecodedToken;
-  // }
+  if (!token) {
+    return NextResponse.redirect(new URL("/admin-login", request.url));
+  }
 
-  // const userRole = decoded?.role;
-  // if (userRole === "admin") {
-  //   return NextResponse.next();
-  // }
-  // return NextResponse.redirect(new URL("/", request.url));
+  let decoded = null;
+  if (token) {
+    decoded = (await jwtDecode(token as string)) as any;
+  }
+
+  const userRole = decoded?.role;
+
+  if (userRole === "admin") {
+    return NextResponse.next();
+  }
+  return NextResponse.redirect(new URL("/", request.url));
 }
 
 export const config = {
-  // matcher: ["/dashboard/:path*"],
+  matcher: ["/dashboard/:path*"],
 };

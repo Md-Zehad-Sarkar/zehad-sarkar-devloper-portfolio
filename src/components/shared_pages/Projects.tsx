@@ -44,7 +44,7 @@ const Projects = async () => {
               </div>
               <div className="text-white mb-2">
                 <span className="font-semibold mr-2">Description:</span>
-                {project?.description}
+                {project?.description.slice(0, 150)}
               </div>
               <div className="card-actions">
                 <div className="badge badge-outline text-white font-medium py-3">
