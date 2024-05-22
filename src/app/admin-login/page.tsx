@@ -1,7 +1,7 @@
 "use client";
 import PortfolioForm from "@/components/forms/PortfolioForm";
 import PortfolioInput from "@/components/forms/PortfolioInput";
-import { adminLogin } from "@/service/action/utls";
+import { loginAdmin } from "@/service/action/action";
 import { setUserLocalStorage } from "@/service/userStorage";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -11,12 +11,12 @@ import { toast } from "sonner";
 const AdminLoginPage = () => {
   const router = useRouter();
   const onSubmit = async (data: FieldValues) => {
-    const res = await adminLogin(data);
+    const res = await loginAdmin(data);
 
     if (res?.accessToken) {
       setUserLocalStorage(res.accessToken);
       toast.success("Admin Login Successful");
-      router.push("/");
+      router.push("/dashboard");
     } else {
       router.push("/");
     }
