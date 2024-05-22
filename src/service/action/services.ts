@@ -1,7 +1,5 @@
 "use server";
 
-import { setAccessTokenCookies } from "./setCookies";
-
 export const addProjects = async (values: any) => {
   const res = await fetch(
     "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-projects",
