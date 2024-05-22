@@ -6,8 +6,8 @@ export async function sendEmail(data: TFormData) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.SMTP_EMAIL,
-      pass: process.env.SMTP_PASSWORD,
+      user: process.env.NEXT_PUBLIC_SMTP_EMAIL,
+      pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
     },
   });
 

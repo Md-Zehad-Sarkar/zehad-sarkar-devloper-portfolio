@@ -1,24 +1,23 @@
 "use client";
 
-import { deleteCookies } from "@/service/action/setCookies";
 import { getAdminInfo } from "@/service/action/utls";
-import { removeUserLocalStorage } from "@/service/userStorage";
+// import { removeUserLocalStorage } from "@/service/userStorage";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 const Navbar = () => {
   const router = useRouter();
 
   const user = getAdminInfo();
 
-  const handleLogout = () => {
-    removeUserLocalStorage();
-    deleteCookies();
-    toast.success("Admin Logout Success");
-    router.push("/");
-    window.location.reload();
-  };
+  // const handleLogout = () => {
+  //   removeUserLocalStorage();
+  //   toast.success("Admin Logout Success");
+  //   router.push("/");
+  //   window.location.reload();
+  // };
+
   return (
     <header className="">
       <ul className="md:space-y-2 flex md:flex-col gap-3 md:gap-1 items-center font-semibold text-xl flex-wrap py-2 text-left">
@@ -52,9 +51,9 @@ const Navbar = () => {
             <li>
               <Link href="/dashboard">Dashboard</Link>
             </li>
-            <li>
+            {/* <li>
               {user ? <button onClick={handleLogout}>Logout</button> : ""}
-            </li>
+            </li> */}
           </>
         ) : (
           <>
