@@ -2,7 +2,8 @@
 
 import PortfolioForm from "@/components/forms/PortfolioForm";
 import PortfolioInput from "@/components/forms/PortfolioInput";
-import { addCourse } from "@/service/action/utls";
+import { addCourse } from "@/service/action/services";
+
 import { useRouter } from "next/navigation";
 import React from "react";
 import { FieldValues } from "react-hook-form";

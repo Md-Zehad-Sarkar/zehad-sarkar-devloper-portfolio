@@ -1,7 +1,8 @@
 "use client";
 import PortfolioForm from "@/components/forms/PortfolioForm";
 import PortfolioInput from "@/components/forms/PortfolioInput";
-import { addBlog } from "@/service/action/utls";
+import { addBlog } from "@/service/action/services";
+
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useMemo, useRef, useState } from "react";

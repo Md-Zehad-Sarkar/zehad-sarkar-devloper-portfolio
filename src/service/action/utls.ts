@@ -1,62 +1,20 @@
-"use server";
+"use client";
 
-import { setAccessTokenCookies } from "./setCookies";
+import { jwtDecode } from "jwt-decode";
+import { getUserLocalStorage } from "../userStorage";
 
-export const addProjects = async (values: any) => {
-  const res = await fetch(
-    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-projects",
-    {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(values),
-    }
-  );
-  const data = await res.json();
-
-  return data?.projects;
+export const jwtDecoded = (token: string) => {
+  if (token) {
+    const decodedData = jwtDecode(token);
+    return decodedData;
+  }
 };
 
-// add skills action
-export const addSkills = async (values: any) => {
-  const res = await fetch(
-    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-skills",
-    {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(values),
-    }
-  );
-  const data = await res.json();
-
-  return data?.skills;
-};
-
-// add courses action
-export const addCourse = async (values: any) => {
-  const res = await fetch(
-    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-course",
-    {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(values),
-    }
-  );
-  const data = await res.json();
-
-  return data?.course;
-};
-
-// add courses action
-export const addBlog = async (values: any) => {
-  const res = await fetch(
-    "https://portfolio-server-sigma-eight.vercel.app/api/v1/add-blogs",
-    {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(values),
-    }
-  );
-  const data = await res.json();
-
-  return data?.blogs;
+export const getAdminInfo = () => {
+  const accessToken = getUserLocalStorage();
+  let decoded = null;
+  if (accessToken) {
+    decoded = jwtDecode(accessToken);
+  }
+  return decoded;
 };

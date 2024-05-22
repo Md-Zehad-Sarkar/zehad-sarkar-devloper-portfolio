@@ -2,7 +2,8 @@
 import PortfolioFileUploader from "@/components/forms/PortfolioFileUploader";
 import PortfolioForm from "@/components/forms/PortfolioForm";
 import PortfolioInput from "@/components/forms/PortfolioInput";
-import { addSkills } from "@/service/action/utls";
+import { addSkills } from "@/service/action/services";
+
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React from "react";

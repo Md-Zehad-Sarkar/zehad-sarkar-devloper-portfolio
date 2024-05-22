@@ -1,14 +1,15 @@
 "use client";
 import { deleteCookies } from "@/service/action/setCookies";
-import { getAdmin, removeUserLocalStorage } from "@/service/userStorage";
+import { getAdminInfo } from "@/service/action/utls";
+import { removeUserLocalStorage } from "@/service/userStorage";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-
 const Navbar = () => {
   const router = useRouter();
-  const user = getAdmin();
+
+  const user = getAdminInfo();
 
   const handleLogout = () => {
     removeUserLocalStorage();
