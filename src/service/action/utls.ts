@@ -60,29 +60,3 @@ export const addBlog = async (values: any) => {
 
   return data?.blogs;
 };
-
-
-// Login api
-export const adminLogin = async (value: any) => {
-  const res = await fetch(
-    // "https://portfolio-server-sigma-eight.vercel.app/api/v1/login-users",
-    "http://localhost:5000/api/v1/login-users",
-    {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-
-      body: JSON.stringify(value),
-      credentials: "include",
-    }
-  );
-
-  const userInfo = await res.json();
-  if (userInfo?.accessToken) {
-    setAccessTokenCookies(userInfo.accessToken, {
-      redirect: "/dashboard",
-    });
-  }
-  return userInfo;
-};
