@@ -1,6 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
 import { setAccessTokenCookies } from "./setCookies";
 
 export const addProjects = async (values: any) => {
@@ -62,10 +61,12 @@ export const addBlog = async (values: any) => {
   return data?.blogs;
 };
 
+
 // Login api
 export const adminLogin = async (value: any) => {
   const res = await fetch(
-    "https://portfolio-server-sigma-eight.vercel.app/api/v1/login-users",
+    // "https://portfolio-server-sigma-eight.vercel.app/api/v1/login-users",
+    "http://localhost:5000/api/v1/login-users",
     {
       method: "POST",
       headers: {
