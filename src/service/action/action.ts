@@ -1,7 +1,6 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { jwtDecoded } from "./utls";
 
 export const loginAdmin = async (value: any) => {
   // const localUrl = "http://localhost:5000/api/v1/login-users";
@@ -23,10 +22,9 @@ export const loginAdmin = async (value: any) => {
     }
     return userInfo;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
-
 
 // get accessToken from cookie
 export const getToken = () => {

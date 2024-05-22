@@ -26,9 +26,15 @@ const Contact = () => {
 
   return (
     <div className="mt-24">
-      <h2 className="text-5xl mb-12">Contact</h2>
+      <h2 className="text-5xl mb-12">Contact</h2>{" "}
+      <div>
+        <span>Send an email:</span>{" "}
+        <a className="text-blue-400" href="mailto:zehadsarkar22@gmail.com">
+          zehadsarkar22@gmail.com
+        </a>
+      </div>
       <form onClick={handleSubmit(onSubmit)} className="max-w-[600px] my-2">
-        <legend id="contact">Contact with me</legend>
+        <legend id="contact">Send me a message:</legend>
         <div className="flex flex-col mt-6 gap-2">
           <label htmlFor="Name" className="text-lg">
             Name
